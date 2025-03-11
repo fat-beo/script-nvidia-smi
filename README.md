@@ -35,7 +35,7 @@ Script này tự động hóa quá trình cài đặt driver NVIDIA và CUDA too
 ### Installation
 ```bash
 # Download script from GitHub
-wget https://raw.githubusercontent.com/fat-murphy/script-nvidia-smi/main/script-nvidia-smi.sh
+wget https://raw.githubusercontent.com/fat-beo/script-nvidia-smi/main/script-nvidia-smi.sh
 
 # Make script executable
 chmod +x script-nvidia-smi.sh
@@ -70,7 +70,7 @@ sudo ./script-nvidia-smi.sh
 ### Cài đặt
 ```bash
 # Tải script từ GitHub
-wget https://raw.githubusercontent.com/fat-murphy/script-nvidia-smi/main/script-nvidia-smi.sh
+wget https://raw.githubusercontent.com/fat-beo/script-nvidia-smi/main/script-nvidia-smi.sh
 
 # Cấp quyền thực thi cho script
 chmod +x script-nvidia-smi.sh
