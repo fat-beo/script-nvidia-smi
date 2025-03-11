@@ -6,6 +6,33 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
+# Function to check for script updates
+check_for_updates() {
+    echo -e "${YELLOW}Checking for script updates...${NC}"
+    TMP_SCRIPT="/tmp/script-nvidia-smi.sh"
+    
+    # Download the latest version
+    if wget -q https://raw.githubusercontent.com/fat-murphy/script-nvidia-smi/main/script-nvidia-smi.sh -O $TMP_SCRIPT; then
+        # Compare with current version
+        if ! cmp -s "$0" "$TMP_SCRIPT"; then
+            echo -e "${GREEN}New version found! Updating script...${NC}"
+            cp "$TMP_SCRIPT" "$0"
+            chmod +x "$0"
+            echo -e "${GREEN}Script updated successfully! Please run the script again.${NC}"
+            rm "$TMP_SCRIPT"
+            exit 0
+        else
+            echo -e "${GREEN}Script is up to date.${NC}"
+            rm "$TMP_SCRIPT"
+        fi
+    else
+        echo -e "${RED}Failed to check for updates. Continuing with current version...${NC}"
+    fi
+}
+
+# Check for updates at startup
+check_for_updates
+
 # My sign 
 print_sign() {
     echo -e "${GREEN}

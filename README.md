@@ -25,7 +25,7 @@ sudo ./script-nvidia-smi.sh
 ## Lưu ý
 
 - Script yêu cầu quyền root để chạy
-- Sau khi cài đặt driver, hệ thống sẽ tự động khởi động lại
+- Sau khi cài đặt driver, bạn có thể chọn có khởi động lại ngay hay không
 - Đối với CUDA Toolkit, script sẽ tự động thêm các biến môi trường vào ~/.bashrc
 
 ## Tính năng
@@ -34,3 +34,4 @@ sudo ./script-nvidia-smi.sh
 - Kiểm tra và xác minh cài đặt
 - Hiển thị thông báo màu sắc để dễ theo dõi tiến trình
 - Tự động cấu hình CUDA environment variables
+- Tùy chọn khởi động lại sau khi cài đặt
