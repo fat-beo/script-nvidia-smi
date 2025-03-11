@@ -1,6 +1,15 @@
 # NVIDIA Driver & CUDA Toolkit Installation Script
 # Script Cài đặt NVIDIA Driver & CUDA Toolkit
 
+## Description / Mô tả
+This script automates the installation process of NVIDIA drivers and CUDA toolkit on Ubuntu/Debian systems. It provides a user-friendly interface with colored output, automatic system updates, and verification steps to ensure successful installation. The script includes features like auto-update, installation verification, and optional system reboot.
+
+Script này tự động hóa quá trình cài đặt driver NVIDIA và CUDA toolkit trên các hệ thống Ubuntu/Debian. Cung cấp giao diện thân thiện với người dùng thông qua các thông báo màu sắc, tự động cập nhật hệ thống và các bước xác minh để đảm bảo cài đặt thành công. Script bao gồm các tính năng như tự động cập nhật, kiểm tra cài đặt và tùy chọn khởi động lại hệ thống.
+
+[![GitHub](https://img.shields.io/github/license/fat-murphy/script-nvidia-smi)](https://github.com/fat-murphy/script-nvidia-smi/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/fat-murphy/script-nvidia-smi)](https://github.com/fat-murphy/script-nvidia-smi/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/fat-murphy/script-nvidia-smi)](https://github.com/fat-murphy/script-nvidia-smi/issues)
+
 ## Table of Contents / Mục lục
 - [English](#english)
   - [Features](#features)
