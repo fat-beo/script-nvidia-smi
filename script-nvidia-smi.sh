@@ -6,7 +6,6 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
-
 # My sign 
 print_sign() {
     echo -e "${GREEN}
@@ -17,6 +16,21 @@ print_sign() {
     ██║     ██║  ██║   ██║       ██████╔╝███████╗╚██████╔╝
     ╚═╝     ╚═╝  ╚═╝   ╚═╝       ╚═════╝ ╚══════╝ ╚═════╝ 
     ${NC}"
+}
+
+# Function to handle reboot
+handle_reboot() {
+    read -p "Do you want to reboot now? (y/N): " choice
+    case "$choice" in
+        y|Y)
+            echo -e "${YELLOW}System will reboot in 5 seconds...${NC}"
+            sleep 5
+            sudo reboot
+            ;;
+        *)
+            echo -e "${YELLOW}Please remember to reboot your system to apply changes.${NC}"
+            ;;
+    esac
 }
 
 # Function to install NVIDIA CUDA Toolkit
@@ -80,9 +94,7 @@ else
             echo -e "${YELLOW}Auto installing NVIDIA drivers...${NC}"
             if sudo ubuntu-drivers autoinstall; then
                 echo -e "${GREEN}Auto installation completed successfully.${NC}"
-                echo -e "${YELLOW}System will reboot in 5 seconds...${NC}"
-                sleep 5
-                sudo reboot
+                handle_reboot
             else
                 echo -e "${RED}Auto installation failed.${NC}"
                 exit 1
@@ -94,9 +106,7 @@ else
             if sudo apt install $name_driver -y; then
                 echo -e "${GREEN}Driver installation completed successfully.${NC}"
                 verify_installation
-                echo -e "${YELLOW}System will reboot in 5 seconds...${NC}"
-                sleep 5
-                sudo reboot
+                handle_reboot
             else
                 echo -e "${RED}Driver installation failed.${NC}"
                 exit 1
